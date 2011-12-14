@@ -10,16 +10,18 @@ package graph;
  */
 public class Point
 {
-
+    int x, y;
+    
     public Point(int x, int y)
     {
+        this.x = x;
+        this.y = y;
+        
     }
     
     public double distanceTo(Point q)
     {
-        double ToDo = 2.0;
-        
-        return ToDo;
+        return Math.sqrt(Math.abs(Math.pow(this.x - q.x, 2) + Math.pow(this.y - q.y,2)));
     }
     
 }

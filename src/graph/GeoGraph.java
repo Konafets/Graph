@@ -6,9 +6,13 @@ package graph;
  */
 public class GeoGraph implements WeightedGraph
 {
+    private boolean directed;
+	private Point graph[];
+    
     public GeoGraph(Point[] point)
     {
-        
+        this.graph = point;
+        this.directed = false;
     }
     
     /**
@@ -19,7 +23,7 @@ public class GeoGraph implements WeightedGraph
 	@Override
     public int size()
     {
-        
+        return this.graph.length;
     }
 	
 	/**
@@ -30,7 +34,7 @@ public class GeoGraph implements WeightedGraph
 	@Override
     public boolean isDirected()
     {
-        
+        return this.directed ? true : false;
     }
 	
 	/**
@@ -41,7 +45,7 @@ public class GeoGraph implements WeightedGraph
 	@Override
     public double noEdge()
     {
-        
+        return Double.POSITIVE_INFINITY;
     }
 	
 	/**
@@ -54,7 +58,7 @@ public class GeoGraph implements WeightedGraph
 	@Override
     public void setWeight(int i, int j, double x)
     {
-        
+        // Will not implemented
     }
 	
 	/**
@@ -68,7 +72,7 @@ public class GeoGraph implements WeightedGraph
 	@Override
     public double getWeight(int i, int j)
     {
-        
+        return this.graph[i].distanceTo(this.graph[j]);
     }
 
     
@@ -80,7 +84,7 @@ public class GeoGraph implements WeightedGraph
     @Override
 	public void deleteEdge(int i, int j)
     {
-        
+        // Will not implemented   
     }
 
 	
@@ -94,7 +98,14 @@ public class GeoGraph implements WeightedGraph
     @Override
 	public boolean isEdge(int i, int j)
     {
+        boolean result = true;
         
+        if (this.getWeight(i, j) == this.noEdge())
+        {
+            result = false;
+        }
+        
+        return result;
     }
 
 }
