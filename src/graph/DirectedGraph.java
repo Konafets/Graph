@@ -7,6 +7,7 @@ package graph;
 /**
  *
  * @author sok
+ * Testklasse von uns - NICHT VON LANG
  */
 public class DirectedGraph {
 	public static void main(String[] args) {
