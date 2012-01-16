@@ -1,9 +1,15 @@
 package graph;
 
 
+import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Toolkit;
-import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 /**
  * This class contains the main method and the drawing component.
@@ -62,16 +68,66 @@ public class Geo extends JPanel
     
     public static void main(String[] args) 
     {
+            // Create the geo object
         Geo geo = new Geo();
    
-        JFrame frame = new JFrame("Minimum Spanning Tree - Alorithmen");
+            // Creates a new JPanel
+        JPanel panel = new JPanel(new BorderLayout());
+            
+            // and a new frame with a title
+        JFrame frame = new JFrame("Minimum Spanning Tree - Hausarbeit Alorithmen 2012 - Lang");
+            
+            // The system close buttom should exit the application
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel label1 = new JLabel("<html><h1>Hausarbeit Algorithmen (Lang) - Graphen</h1><br></html>");
-        frame.add(label1);
+            
+            // Create a custom close button
+        JButton closeButton = new JButton("Close");
+        
+            // We need a string to output some information about the points in 
+            // the graph
+        String pointInfos = "<html>The graph consists of these points:<br />";
+        
+            // Compile the string 
+        for (int i = 0; i < geo.points.length; i++)
+        {
+           pointInfos  += "P" + (i + 1) + ": X=" + geo.points[i].getX() + " and Y=" + geo.points[i].getY() + "<br />";
+        }
+        pointInfos += "</html>";
+        
+            // Create a new label with the string
+        JLabel label = new JLabel(pointInfos);
+        
+            // Add the label to the panel
+        panel.add(label);
+        
+            // Add the button to the panel
+        panel.add(closeButton, BorderLayout.PAGE_END);
+            
+            // Add a Listener to the button
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                System.exit( 0 );
+            }
+            
+        });
+        
+            // Add the mimimum spanning tree to the frame
         frame.add(geo);
-        frame.setSize(800, 600);
+        
+            // Add the other component inside the panel to the frame
+        frame.add(panel, BorderLayout.PAGE_END);
+        
+            // Make a huge window
+        frame.setSize(1000, 800);
+            
+            // which depends on you platform
         frame.setLocationByPlatform(true);
+        
+            // Let see 
         frame.setVisible(true);
+        
+            // Baby its dynamic baby. Move it!
         Toolkit.getDefaultToolkit().setDynamicLayout(true);
        
         
