@@ -6,3 +6,5 @@ build/classes/graph/DirectedGraph.class
 build/classes/graph/Graph.class
 build/classes/graph/WeightedGraph.class
 >>>>>>> refs/heads/Feature/ClassSpanningTree
+
+.DS_Store
