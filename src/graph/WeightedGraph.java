@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package graph;
 
 /**
@@ -15,7 +11,7 @@ public interface WeightedGraph
 	 * 
 	 * @return int Amount of the knots  
 	 */
-	public int size();
+	public int Size();
 	
 	/**
 	 * Returns true if the graph is directed, false otherwise

@@ -16,16 +16,16 @@ public class Graph implements WeightedGraph
 	
 	/**
 	 * 
-	 * @param size     The size of the the graph
+	 * @param Size     The size of the the graph
 	 * @param directed Set the graph as directed or not directed
 	 */
 	Graph(int size, boolean directed)
 	{
 		this.directed = directed;
 		this.Graph = new double[size - 1][size - 1];
-		for(int i = 0; i < size(); i++)
+		for(int i = 0; i < Size(); i++)
 		{
-			for(int j = 0; j < size(); j++)
+			for(int j = 0; j < Size(); j++)
 			{
 				this.Graph[i][j] = noEdge();
 			}
@@ -39,7 +39,7 @@ public class Graph implements WeightedGraph
 	 * @return int Amount of the knots  
 	 */
 	@Override
-	public int size()
+	public int Size()
 	{
 		return Graph.length;
 	}
