@@ -127,7 +127,7 @@ public class GeoGraph extends JPanel implements WeightedGraph
     {
         for (int i = 0; i < this.Size(); i++)
         {
-            gr.fillOval(graph[i].getX() * 100, graph[i].getY() * 100, 5, 5);
+            gr.fillOval(graph[i].getX() * 100, graph[i].getY() * 100, 6, 6);
         }
     }
     
