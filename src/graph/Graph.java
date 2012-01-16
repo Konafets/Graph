@@ -7,7 +7,7 @@ package graph;
  * @author Finn Kondering 399083
  * @author Stefano Kowalke 485366
  */
-public class Graph implements WeightedGraph
+public final class Graph implements WeightedGraph
 {
 	private boolean directed;
 	private double Graph[][];
