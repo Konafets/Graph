@@ -1,16 +1,13 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package graph;
 
 /**
- *
- * @author sok
+ * 
+ * @author Stefano Kowalke 485366
+ * @author Finn Kondering  
  */
 public class Point
 {
-    int x, y;
+    private int x, y;
     
     public Point(int x, int y)
     {
@@ -22,6 +19,16 @@ public class Point
     public double distanceTo(Point q)
     {
         return Math.sqrt(Math.abs(Math.pow(this.x - q.x, 2) + Math.pow(this.y - q.y,2)));
+    }
+    
+    public int getX()
+    {
+        return this.x;
+    }
+    
+    public int getY()
+    {
+        return this.y;
     }
     
 }
