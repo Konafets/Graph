@@ -4,9 +4,10 @@ import java.awt.Graphics;
 import javax.swing.JPanel;
 
 /**
+ * This class implements a geo graph from given points
  * 
+ * @author Finn Kondering 399083
  * @author Stefano Kowalke 485366
- * @author Finn Kondering  
  */
 public class GeoGraph extends JPanel implements WeightedGraph 
 {
@@ -21,10 +22,10 @@ public class GeoGraph extends JPanel implements WeightedGraph
     
     
     /**
-    * Returns the amount of knots of the graph
-    * 
-    * @return int Amount of the knots  
-    */
+     * Returns the amount of knots of the graph
+     * 
+     * @return Amount of the knots  
+     */
     @Override
     public int Size()
     {
@@ -34,7 +35,7 @@ public class GeoGraph extends JPanel implements WeightedGraph
     /**
      * Returns true if the graph is directed, false otherwise
      * 
-     * @return boolean
+     * @return True if the graph is directed, false otherwise
      */
     @Override
     public boolean isDirected()
@@ -42,38 +43,39 @@ public class GeoGraph extends JPanel implements WeightedGraph
         return this.directed ? true : false;
     }
 	
-    /**
-     * Returns the weight not existant edges
-     * 
-     * @return double
-     */
+	/**
+	 * Returns the weight not existant edges
+	 * 
+	 * @return The weight not existant edges
+	 */
     @Override
     public double noEdge()
     {
         return Double.POSITIVE_INFINITY;
     }
 	
-    /**
-     * Set the weight x of the knots i and j
+	/**
+	 * Set the weight x of the edge i and j
+	 * (Will not implemented)
      * 
-     * @param int i 
-     * @param int j
-     * @param double x  the weight of knots
-     */
+	 * @param i First point
+	 * @param j Second point
+	 * @param x The weight of edge
+	 */
     @Override
     public void setWeight(int i, int j, double x)
     {
         // Will not implemented
     }
 	
-    /**
-     * Returns the weight of edge i and j
-     * 
-     * @param int i start knot
-     * @param int j end knot
-     * 
-     * @return double the weight of the edge
-     */
+	/**
+	 * Returns the weight of edge i and j
+	 * 
+	 * @param i First point
+	 * @param j Second point
+	 * 
+	 * @return The weight of the edge
+	 */
     @Override
     public double getWeight(int i, int j)
     {
@@ -81,11 +83,13 @@ public class GeoGraph extends JPanel implements WeightedGraph
     }
 
     
-    /**
-     * Deletes the edge i of j
-     * @param int i start knot
-     * @param int j end knot 
-     */
+	/**
+	 * Deletes the edge i and j
+     * (Will not implemented)
+     * 
+	 * @param i First point
+	 * @param j Fecond point
+	 */
     @Override
 	public void deleteEdge(int i, int j)
     {
@@ -93,13 +97,13 @@ public class GeoGraph extends JPanel implements WeightedGraph
     }
 
 	
-    /**
-     * Returns true if i and j is an edge
-     * 
-     * @param int i start knot
-     * @param int j end knot
-     * @return boolean
-     */
+	/**
+	 * Returns true if i and j is an edge
+	 * 
+	 * @param i First point
+	 * @param j Second point
+	 * @return True if i and j is an edge
+	 */
     @Override
     public boolean isEdge(int i, int j)
     {
@@ -117,11 +121,10 @@ public class GeoGraph extends JPanel implements WeightedGraph
     /**
      * Draws the points of a graph on the screen
      * 
-     * @param Graphics gr 
+     * @param gr The graphics object 
      */
     public void drawPoints(Graphics gr)
     {
-        //super.paintComponent(gr);
         for (int i = 0; i < this.Size(); i++)
         {
             gr.fillOval(graph[i].getX() * 100, graph[i].getY() * 100, 5, 5);
@@ -131,9 +134,9 @@ public class GeoGraph extends JPanel implements WeightedGraph
     /**
      * Draws the edge of the between the given points on the screen
      * 
-     * @param Graphics gr
-     * @param int i
-     * @param int j 
+     * @param gr The graphics object 
+     * @param i  First point
+     * @param j  Second point
      */
     public void drawEdge(Graphics gr, int i, int j)
     {

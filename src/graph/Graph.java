@@ -1,13 +1,11 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package graph;
 
 
 /**
- *
- * @author sok
+ * This class implements a graph
+ * 
+ * @author Finn Kondering 399083
+ * @author Stefano Kowalke 485366
  */
 public class Graph implements WeightedGraph
 {
@@ -33,22 +31,22 @@ public class Graph implements WeightedGraph
 	}
 	
 	
-	/**
-	 * Returns the amount of knots of the graph
-	 * 
-	 * @return int Amount of the knots  
-	 */
+    /**
+     * Returns the amount of knots of the graph
+     * 
+     * @return Amount of the knots  
+     */
 	@Override
 	public int Size()
 	{
 		return Graph.length;
 	}
 	
-	/**
-	 * Returns true if the graph is directed, false otherwise
-	 * 
-	 * @return boolean
-	 */
+    /**
+     * Returns true if the graph is directed, false otherwise
+     * 
+     * @return True if the graph is directed, false otherwise
+     */
 	@Override
 	public boolean isDirected()
 	{
@@ -56,9 +54,9 @@ public class Graph implements WeightedGraph
 	}
 	
 	/**
-	 * Returns the weight of no-existant edges
+	 * Returns the weight not existant edges
 	 * 
-	 * @return double
+	 * @return The weight not existant edges
 	 */
 	@Override
 	public double noEdge()
@@ -67,11 +65,11 @@ public class Graph implements WeightedGraph
 	}
 	
 	/**
-	 * Set the weight x of the knots i and j
-	 * 
-	 * @param int i 
-	 * @param int j
-	 * @param double x  the weight of knots
+	 * Set the weight x of the edge i and j
+     * 
+	 * @param i First point
+	 * @param j Second point
+	 * @param x The weight of edge
 	 */
 	@Override
 	public void setWeight(int i, int j, double x)
@@ -82,10 +80,10 @@ public class Graph implements WeightedGraph
 	/**
 	 * Returns the weight of edge i and j
 	 * 
-	 * @param int i start knot
-	 * @param int j end knot
+	 * @param i First point
+	 * @param j Second point
 	 * 
-	 * @return double the weight of the edge
+	 * @return The weight of the edge
 	 */
 	@Override
 	public double getWeight(int i, int j)
@@ -94,9 +92,10 @@ public class Graph implements WeightedGraph
 	}
 	
 	/**
-	 * Deletes the edge i of j
-	 * @param int i start knot
-	 * @param int j end knot 
+	 * Deletes the edge i and j
+     * 
+	 * @param i First point
+	 * @param j Fecond point
 	 */
 	@Override
 	public void deleteEdge(int i, int j)
@@ -107,9 +106,9 @@ public class Graph implements WeightedGraph
 	/**
 	 * Returns true if i and j is an edge
 	 * 
-	 * @param int i start knot
-	 * @param int j end knot
-	 * @return boolean
+	 * @param i First point
+	 * @param j Second point
+	 * @return True if i and j is an edge
 	 */
 	@Override
 	public boolean isEdge(int i, int j)

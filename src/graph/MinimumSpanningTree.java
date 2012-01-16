@@ -1,20 +1,45 @@
 package graph;
 
-import java.util.ArrayList;
-
 /**
+ * This class implements the calculation of a minimum spanning tree from given graph
  * 
+ * @author Finn Kondering 399083
  * @author Stefano Kowalke 485366
- * @author Finn Kondering  
  */
 public final class MinimumSpanningTree implements WeightedGraph
 {
+    /**
+     * A representation of a wheighted graph. Could every type of graph if
+     * it implements the interface of WeightedGraph.
+     */
     private WeightedGraph weightedGraph;
+    
+    /**
+     * The maximum weight of a edge.
+     */
     private final double maxWeight = Double.POSITIVE_INFINITY;
+    
+    /**
+     * This array will contain the minimum spanning tree. 
+     * From last node to first node
+     */
     private int[] prevNode; 
+    
+    /**
+     * The size (amount of nodes) of the graph
+     */
     private int size;
+    
+    /**
+     * This array contains the distance between all nodes of the graph
+     */
     private double[] distanceToPrevNode;
     
+    /**
+     * The constructor
+     * 
+     * @param wg A graph
+     */
     public MinimumSpanningTree(WeightedGraph wg)
     {
         this.weightedGraph = wg;
@@ -27,7 +52,7 @@ public final class MinimumSpanningTree implements WeightedGraph
     /**
      * Returns the amount of knots of the graph
      * 
-     * @return int Amount of the knots  
+     * @return Amount of the knots  
      */
     @Override
     public int Size()
@@ -38,7 +63,7 @@ public final class MinimumSpanningTree implements WeightedGraph
     /**
      * Returns true if the graph is directed, false otherwise
      * 
-     * @return boolean
+     * @return True if the graph is directed, false otherwise
      */
     @Override
     public boolean isDirected()
@@ -49,7 +74,7 @@ public final class MinimumSpanningTree implements WeightedGraph
 	/**
 	 * Returns the weight not existant edges
 	 * 
-	 * @return double
+	 * @return The weight not existant edges
 	 */
 	@Override
     public double noEdge()
@@ -58,11 +83,12 @@ public final class MinimumSpanningTree implements WeightedGraph
     }
 	
 	/**
-	 * Set the weight x of the knots i and j
-	 * 
-	 * @param int i 
-	 * @param int j
-	 * @param double x  the weight of knots
+	 * Set the weight x of the edge i and j
+	 * (Will not implemented)
+     * 
+	 * @param i First point
+	 * @param j Second point
+	 * @param x The weight of edge
 	 */
 	@Override
     public void setWeight(int i, int j, double x)
@@ -73,10 +99,10 @@ public final class MinimumSpanningTree implements WeightedGraph
 	/**
 	 * Returns the weight of edge i and j
 	 * 
-	 * @param int i start knot
-	 * @param int j end knot
+	 * @param i First point
+	 * @param j Second point
 	 * 
-	 * @return double the weight of the edge
+	 * @return The weight of the edge
 	 */
 	@Override
     public double getWeight(int i, int j)
@@ -86,9 +112,11 @@ public final class MinimumSpanningTree implements WeightedGraph
 
     
 	/**
-	 * Deletes the edge i of j
-	 * @param int i start knot
-	 * @param int j end knot 
+	 * Deletes the edge i and j
+     * (Will not implemented)
+     * 
+	 * @param i First point
+	 * @param j Fecond point
 	 */
     @Override
 	public void deleteEdge(int i, int j)
@@ -100,9 +128,9 @@ public final class MinimumSpanningTree implements WeightedGraph
 	/**
 	 * Returns true if i and j is an edge
 	 * 
-	 * @param int i start knot
-	 * @param int j end knot
-	 * @return boolean
+	 * @param i First point
+	 * @param j Second point
+	 * @return True if i and j is an edge
 	 */
     @Override
 	public boolean isEdge(int i, int j)
@@ -117,15 +145,35 @@ public final class MinimumSpanningTree implements WeightedGraph
         return result;
     }
     
+    /**
+     * Returns the previous node of the passed current node
+     * 
+     * @param currentNode The current node
+     * @return The previous node of the passed current node
+     */
     public int getPrevNode(int currentNode)
     {
         return this.prevNode[currentNode];
     }
 
+    /**
+     * Returns the distance (weight) from the passed current node to the the 
+     * previous node
+     * 
+     * @param currentNode The current node
+     * @return The distance from passed node to prev node
+     */
     public double getDistanceToPrevNode(int currentNode)
     {
         return this.distanceToPrevNode[currentNode];
     }
+    
+    /**
+     * Computes the minimum spanning tree
+     * 
+     * First the method calculates the distances between all nodes and 
+     * stores the nodes with minimim distance in array prevNode.
+     */
     public void computeMinimumSpanningTree()
     {
         int nodeCounter, root;
