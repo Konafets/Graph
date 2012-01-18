@@ -2,6 +2,7 @@ package graph;
 
 import java.awt.Graphics;
 import javax.swing.JPanel;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * This class implements a geo graph from given points
@@ -11,6 +12,19 @@ import javax.swing.JPanel;
  */
 public class GeoGraph extends JPanel implements WeightedGraph 
 {
+    public class PointNotExistInGraphException extends Exception 
+    {
+        public PointNotExistInGraphException()
+        {
+            
+        }
+        
+        public PointNotExistInGraphException(String s)
+        {
+            super(s);
+        }
+    }
+    
     private boolean directed;
     private Point graph[];
     
@@ -53,19 +67,19 @@ public class GeoGraph extends JPanel implements WeightedGraph
     {
         return Double.POSITIVE_INFINITY;
     }
-	
-	/**
-	 * Set the weight x of the edge i and j
-	 * (Will not implemented)
+
+    /**
+     * Set the weight x of the edge i and j
      * 
-	 * @param i First point
-	 * @param j Second point
-	 * @param x The weight of edge
-	 */
+     * @param i First point
+     * @param j Second point
+     * @param x The weight of edge
+     * @throws NotImplementedException This method will not implemented
+     */
     @Override
     public void setWeight(int i, int j, double x)
     {
-        // Will not implemented
+        throw new NotImplementedException();
     }
 	
 	/**
@@ -83,17 +97,17 @@ public class GeoGraph extends JPanel implements WeightedGraph
     }
 
     
-	/**
-	 * Deletes the edge i and j
-     * (Will not implemented)
+    /**
+     * Deletes the edge i and j
      * 
-	 * @param i First point
-	 * @param j Fecond point
-	 */
+     * @param i First point
+     * @param j Fecond point
+     * @throws NotImplementedException This method will not implemented
+     */
     @Override
 	public void deleteEdge(int i, int j)
     {
-        // Will not implemented   
+        throw new NotImplementedException();  
     }
 
 	
@@ -137,9 +151,15 @@ public class GeoGraph extends JPanel implements WeightedGraph
      * @param gr The graphics object 
      * @param i  First point
      * @param j  Second point
+     * @throws PointNotExistInGraphException If indices are out of bound, means 
+     *         that the particular Point doesn't exist.
      */
-    public void drawEdge(Graphics gr, int i, int j)
+    public void drawEdge(Graphics gr, int i, int j) throws PointNotExistInGraphException
     {
+        if ((i < 0) || (j >= this.Size()))
+        {
+            throw new PointNotExistInGraphException();
+        }
         gr.drawLine(graph[i].getX() * 100, graph[i].getY() * 100, graph[j].getX() * 100, graph[j].getY() * 100);
     }
 

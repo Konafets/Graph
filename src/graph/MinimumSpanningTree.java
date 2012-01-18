@@ -1,5 +1,7 @@
 package graph;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
 /**
  * This class implements the calculation of a minimum spanning tree from given graph
  * 
@@ -81,19 +83,19 @@ public final class MinimumSpanningTree implements WeightedGraph
     {
         return this.maxWeight;
     }
-	
-	/**
-	 * Set the weight x of the edge i and j
-	 * (Will not implemented)
+
+    /**
+     * Set the weight x of the edge i and j
      * 
-	 * @param i First point
-	 * @param j Second point
-	 * @param x The weight of edge
-	 */
-	@Override
+     * @param i First point
+     * @param j Second point
+     * @param x The weight of edge
+     * @throws NotImplementedException This method will not implemented
+     */
+    @Override
     public void setWeight(int i, int j, double x)
     {
-        // Will not implemented
+        throw new NotImplementedException();
     }
 	
 	/**
@@ -111,17 +113,17 @@ public final class MinimumSpanningTree implements WeightedGraph
     }
 
     
-	/**
-	 * Deletes the edge i and j
-     * (Will not implemented)
+    /**
+     * Deletes the edge i and j
      * 
-	 * @param i First point
-	 * @param j Fecond point
-	 */
+     * @param i First point
+     * @param j Fecond point
+     * @throws NotImplementedException This method will not implemented
+     */
     @Override
 	public void deleteEdge(int i, int j)
     {
-        // Will not implemented   
+        throw new NotImplementedException();   
     }
 
 	

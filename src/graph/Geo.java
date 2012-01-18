@@ -1,11 +1,14 @@
 package graph;
 
 
+import graph.GeoGraph.PointNotExistInGraphException;
 import java.awt.BorderLayout;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -62,7 +65,11 @@ public class Geo extends JPanel
         geoGraph.drawPoints(g);
         for (int i = geoGraph.Size() - 1; i > 0; i--)
         {
-            geoGraph.drawEdge(g, mst.getPrevNode(i), i);
+            try {
+                geoGraph.drawEdge(g, mst.getPrevNode(i), i);
+            } catch (PointNotExistInGraphException ex) {
+                Logger.getLogger(Geo.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
     
