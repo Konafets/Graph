@@ -46,7 +46,7 @@ public final class MinimumSpanningTree implements WeightedGraph
     public MinimumSpanningTree(WeightedGraph wg)
     {
         this.weightedGraph = wg;
-        this.size = this.Size();
+        this.size = wg.Size();
         this.distanceToPrevNode = new double[size];
         this.prevNode = new int[size];
         computeMinimumSpanningTree();
