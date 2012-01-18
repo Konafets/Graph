@@ -59,7 +59,14 @@ public final class MinimumSpanningTree implements WeightedGraph
     @Override
     public int Size()
     {
-        return this.weightedGraph.Size();
+        int result = 0;
+        for (int i = distanceToPrevNode.length - 1; i > 0; i--)
+        {
+            
+                result += distanceToPrevNode[i];
+            
+        }
+        return result;
     }
 
     /**
