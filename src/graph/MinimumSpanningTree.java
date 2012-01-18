@@ -33,7 +33,8 @@ public final class MinimumSpanningTree implements WeightedGraph
     private int size;
     
     /**
-     * This array contains the distance between all nodes of the graph
+     * This array contains the distance between the nodes of the minimum spanning tree
+     * From last node to first node
      */
     private double[] distanceToPrevNode;
     
