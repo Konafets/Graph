@@ -61,7 +61,7 @@ public final class MinimumSpanningTree implements WeightedGraph
     {
         return this.weightedGraph.Size();
     }
-	
+
     /**
      * Returns true if the graph is directed, false otherwise
      * 
@@ -72,13 +72,13 @@ public final class MinimumSpanningTree implements WeightedGraph
     {
         return this.weightedGraph.isDirected() ? true : false;
     }
-	
-	/**
-	 * Returns the weight not existant edges
-	 * 
-	 * @return The weight not existant edges
-	 */
-	@Override
+
+    /**
+     * Returns the weight not existant edges
+     * 
+     * @return The weight not existant edges
+     */
+    @Override
     public double noEdge()
     {
         return this.maxWeight;
@@ -97,16 +97,16 @@ public final class MinimumSpanningTree implements WeightedGraph
     {
         throw new NotImplementedException();
     }
-	
-	/**
-	 * Returns the weight of edge i and j
-	 * 
-	 * @param i First point
-	 * @param j Second point
-	 * 
-	 * @return The weight of the edge
-	 */
-	@Override
+
+    /**
+     * Returns the weight of edge i and j
+     * 
+     * @param i First point
+     * @param j Second point
+     * 
+     * @return The weight of the edge
+     */
+    @Override
     public double getWeight(int i, int j)
     {
         return this.weightedGraph.getWeight(i, j);
@@ -121,21 +121,20 @@ public final class MinimumSpanningTree implements WeightedGraph
      * @throws NotImplementedException This method will not implemented
      */
     @Override
-	public void deleteEdge(int i, int j)
+    public void deleteEdge(int i, int j)
     {
         throw new NotImplementedException();   
     }
 
-	
-	/**
-	 * Returns true if i and j is an edge
-	 * 
-	 * @param i First point
-	 * @param j Second point
-	 * @return True if i and j is an edge
-	 */
+    /**
+     * Returns true if i and j is an edge
+     * 
+     * @param i First point
+     * @param j Second point
+     * @return True if i and j is an edge
+     */
     @Override
-	public boolean isEdge(int i, int j)
+    public boolean isEdge(int i, int j)
     {
         boolean result = true;
         

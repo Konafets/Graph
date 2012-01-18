@@ -45,7 +45,7 @@ public class GeoGraph extends JPanel implements WeightedGraph
     {
         return this.graph.length;
     }
-	
+    
     /**
      * Returns true if the graph is directed, false otherwise
      * 
@@ -56,12 +56,12 @@ public class GeoGraph extends JPanel implements WeightedGraph
     {
         return this.directed ? true : false;
     }
-	
-	/**
-	 * Returns the weight not existant edges
-	 * 
-	 * @return The weight not existant edges
-	 */
+
+    /**
+     * Returns the weight not existant edges
+     * 
+     * @return The weight not existant edges
+     */
     @Override
     public double noEdge()
     {
@@ -81,15 +81,15 @@ public class GeoGraph extends JPanel implements WeightedGraph
     {
         throw new NotImplementedException();
     }
-	
-	/**
-	 * Returns the weight of edge i and j
-	 * 
-	 * @param i First point
-	 * @param j Second point
-	 * 
-	 * @return The weight of the edge
-	 */
+
+    /**
+     * Returns the weight of edge i and j
+     * 
+     * @param i First point
+     * @param j Second point
+     * 
+     * @return The weight of the edge
+     */
     @Override
     public double getWeight(int i, int j)
     {
@@ -105,19 +105,18 @@ public class GeoGraph extends JPanel implements WeightedGraph
      * @throws NotImplementedException This method will not implemented
      */
     @Override
-	public void deleteEdge(int i, int j)
+    public void deleteEdge(int i, int j)
     {
         throw new NotImplementedException();  
     }
-
-	
-	/**
-	 * Returns true if i and j is an edge
-	 * 
-	 * @param i First point
-	 * @param j Second point
-	 * @return True if i and j is an edge
-	 */
+    
+    /**
+     * Returns true if i and j is an edge
+     *
+     * @param i First point
+     * @param j Second point
+     * @return True if i and j is an edge
+     */
     @Override
     public boolean isEdge(int i, int j)
     {
@@ -130,7 +129,6 @@ public class GeoGraph extends JPanel implements WeightedGraph
         
         return result;
     }
-    
     
     /**
      * Draws the points of a graph on the screen

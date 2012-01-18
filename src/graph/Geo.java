@@ -138,5 +138,5 @@ public class Geo extends JPanel
         Toolkit.getDefaultToolkit().setDynamicLayout(true);
        
         
-	} 
+    }
 }
